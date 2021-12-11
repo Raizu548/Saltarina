@@ -25,4 +25,5 @@ func play_animacion():
 
 func cambiar_nivel():
 # warning-ignore:return_value_discarded
+	DatosPlayer.actualizar_cant_monedas_nivel()
 	get_tree().change_scene(proximo_nivel)

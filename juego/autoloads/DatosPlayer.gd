@@ -10,16 +10,24 @@ var llaves = 0
 var nivel_actual = ""
 var puntaje = 0
 
+#puntuacion de cada moneda
 var punto_oro = 10
 var punto_plata = 5
 var punto_bronce = 2
 
+#moneda guardad cuando pasas de nivel
+var monedas_oro_despues_escenario = 0
+var monedas_plata_despues_escenario = 0
+var monedas_bronce_despues_escenario = 0
 
 func reset():
 	vida = 3
 	monedas_oro = 0
 	monedas_plata = 0
 	monedas_bronce = 0
+	monedas_oro_despues_escenario = 0
+	monedas_plata_despues_escenario = 0
+	monedas_bronce_despues_escenario = 0
 
 
 func restar_vidas():
@@ -50,6 +58,20 @@ func sumar_monedas(moneda):
 			print("ERROR")
 	
 	emit_signal("actualizar_datos")
+
+
+# al morir pierdes las monedas conseguidas en el nuevo nivel
+func cant_monedas_al_pasar_nivel():
+	monedas_bronce = monedas_bronce_despues_escenario
+	monedas_oro = monedas_oro_despues_escenario
+	monedas_plata = monedas_plata_despues_escenario
+
+# al pasar al siguiente nivel empiezas con la cantidad de monedas que empezste,
+func actualizar_cant_monedas_nivel():
+	monedas_bronce_despues_escenario = monedas_bronce
+	monedas_oro_despues_escenario = monedas_oro
+	monedas_plata_despues_escenario = monedas_plata
+
 
 func generar_puntaje():
 	puntaje = monedas_oro * punto_oro + monedas_plata * punto_plata + monedas_bronce * punto_bronce
