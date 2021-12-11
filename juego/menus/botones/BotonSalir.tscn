@@ -1,0 +1,39 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://juego/menus/BotonSalir.gd" type="Script" id=1]
+[ext_resource path="res://recursos/Fonts/Kenney Future Narrow.ttf" type="DynamicFontData" id=2]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.635294, 0.109804, 0.0588235, 1 )
+border_width_left = 15
+border_width_right = 15
+border_color = Color( 0.45098, 0.027451, 0.027451, 1 )
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.45098, 0.027451, 0.027451, 1 )
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.635294, 0.109804, 0.0588235, 1 )
+border_width_left = 6
+border_color = Color( 1, 1, 1, 1 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 18
+font_data = ExtResource( 2 )
+
+[node name="BotonSalir" type="Button"]
+margin_top = 153.0
+margin_right = 196.0
+margin_bottom = 210.0
+size_flags_vertical = 3
+custom_styles/hover = SubResource( 1 )
+custom_styles/pressed = SubResource( 2 )
+custom_styles/normal = SubResource( 3 )
+custom_fonts/font = SubResource( 4 )
+text = "Salir"
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

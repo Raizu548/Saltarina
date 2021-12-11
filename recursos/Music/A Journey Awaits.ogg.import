@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/A Journey Awaits.ogg-8315a4cf5a83e0d062bec16971984b56.oggstr"
+
+[deps]
+
+source_file="res://recursos/Music/A Journey Awaits.ogg"
+dest_files=[ "res://.import/A Journey Awaits.ogg-8315a4cf5a83e0d062bec16971984b56.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
