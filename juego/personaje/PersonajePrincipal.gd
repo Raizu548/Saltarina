@@ -115,6 +115,7 @@ func respawn():
 	animacion_player.play("oscurecer")
 	if DatosPlayer.get_vida() >= 1:
 # warning-ignore:return_value_discarded
+		DatosPlayer.cant_monedas_al_pasar_nivel()
 		get_tree().reload_current_scene()
 
 
