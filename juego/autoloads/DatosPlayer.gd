@@ -74,9 +74,18 @@ func actualizar_cant_monedas_nivel():
 
 
 func generar_puntaje():
-	puntaje = monedas_oro * punto_oro + monedas_plata * punto_plata + monedas_bronce * punto_bronce
+	puntaje = puntaje_tot_bronce() + puntaje_tot_oro() + puntaje_tot_plata()
 	return puntaje 
 
+
+func puntaje_tot_oro():
+	return monedas_oro * punto_oro
+
+func puntaje_tot_bronce():
+	return monedas_bronce * punto_bronce
+
+func puntaje_tot_plata():
+	return monedas_plata * punto_plata
 
 func get_vida():
 	return vida
@@ -98,3 +107,12 @@ func get_nivel_actual():
 	
 func set_nivel_actual(nuevo_nivel):
 	nivel_actual = nuevo_nivel
+
+func get_punto_oro():
+	return punto_oro	
+
+func get_punto_bronce():
+	return punto_bronce
+
+func get_punto_plata():
+	return punto_plata

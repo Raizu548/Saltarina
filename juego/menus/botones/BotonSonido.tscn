@@ -1,0 +1,49 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://recursos/HUD/music-icon.png" type="Texture" id=1]
+[ext_resource path="res://juego/menus/botones/BotonSonido.gd" type="Script" id=2]
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.619608, 0.0627451, 0.0627451, 1 )
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.745098, 0.745098, 0.745098, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0, 0, 0, 1 )
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[node name="BotonSonido" type="Button"]
+margin_right = 95.0
+margin_bottom = 75.0
+custom_styles/pressed = SubResource( 2 )
+custom_styles/normal = SubResource( 1 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -47.5
+margin_top = -37.5
+margin_right = -45.5
+margin_bottom = -36.5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="iconMusic" type="Sprite" parent="MarginContainer"]
+position = Vector2( 45.0802, 37.1368 )
+scale = Vector2( 0.15, 0.15 )
+texture = ExtResource( 1 )
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

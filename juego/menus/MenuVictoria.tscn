@@ -1,20 +1,20 @@
 [gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://recursos/Fonts/Kenney Blocks.ttf" type="DynamicFontData" id=1]
-[ext_resource path="res://recursos/botones/BotonMenuHover.tres" type="StyleBox" id=3]
-[ext_resource path="res://recursos/botones/BotonMenuPressed.tres" type="StyleBox" id=4]
-[ext_resource path="res://recursos/botones/BotonMenuNormal.tres" type="StyleBox" id=5]
+[ext_resource path="res://juego/interfaz/PuntuacionMonedaPlata.tscn" type="PackedScene" id=2]
+[ext_resource path="res://juego/interfaz/PuntuacionMonedaOro.tscn" type="PackedScene" id=3]
+[ext_resource path="res://juego/interfaz/PuntuacionMonedaBaseBronce.tscn" type="PackedScene" id=4]
 [ext_resource path="res://recursos/Fonts/Kenney Future Narrow.ttf" type="DynamicFontData" id=6]
 [ext_resource path="res://recursos/Players/bunny2_jump.png" type="Texture" id=7]
 [ext_resource path="res://juego/menus/botones/BotonSalir.tscn" type="PackedScene" id=8]
 [ext_resource path="res://juego/menus/botones/BotonMenu.tscn" type="PackedScene" id=9]
 [ext_resource path="res://juego/menus/MenuVictoria.gd" type="Script" id=10]
 
-[sub_resource type="DynamicFont" id=2]
+[sub_resource type="DynamicFont" id=1]
 size = 18
 font_data = ExtResource( 6 )
 
-[sub_resource type="DynamicFont" id=1]
+[sub_resource type="DynamicFont" id=2]
 size = 50
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 1 )
@@ -53,18 +53,11 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="BotonMenuPrincipal" type="Button" parent="VBoxContainer" instance=ExtResource( 9 )]
+[node name="BotonMenuPrincipal" parent="VBoxContainer" instance=ExtResource( 9 )]
 margin_right = 297.0
 margin_bottom = 164.0
-size_flags_vertical = 3
-custom_styles/hover = ExtResource( 3 )
-custom_styles/pressed = ExtResource( 4 )
-custom_styles/normal = ExtResource( 5 )
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 1 )
 text = "Menu Principal"
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="HSeparator" type="HSeparator" parent="VBoxContainer"]
 margin_top = 169.0
@@ -82,19 +75,17 @@ margin_left = 157.49
 margin_top = 125.992
 margin_right = 486.49
 margin_bottom = 201.992
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = SubResource( 2 )
 text = "Ganaste!!"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="PanelPuntaje" type="Panel" parent="."]
-anchor_top = 1.0
-anchor_bottom = 1.0
 margin_left = 50.0
-margin_top = -195.0
+margin_top = 605.898
 margin_right = 556.0
-margin_bottom = -98.0
+margin_bottom = 686.898
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -112,10 +103,37 @@ margin_left = 20.4075
 margin_top = 8.5993
 margin_right = 349.408
 margin_bottom = 84.5993
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = SubResource( 2 )
 text = "Puntaje: "
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="."]
+anchor_top = 1.0
+anchor_right = 0.484
+anchor_bottom = 1.0
+margin_left = 65.0
+margin_top = -262.0
+margin_right = -297.52
+margin_bottom = -117.0
+custom_constants/separation = 45
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PuntuacionMonedaOro" parent="VBoxContainer2" instance=ExtResource( 3 )]
+margin_right = 257.0
+margin_bottom = 0.0
+
+[node name="PuntuacionMonedaPlata" parent="VBoxContainer2" instance=ExtResource( 2 )]
+margin_top = 45.0
+margin_right = 257.0
+margin_bottom = 45.0
+
+[node name="PuntuacionMonedaBaseBronce" parent="VBoxContainer2" instance=ExtResource( 4 )]
+margin_top = 90.0
+margin_right = 257.0
+margin_bottom = 90.0
 
 [connection signal="pressed" from="VBoxContainer/BotonMenuPrincipal" to="." method="_on_BotonMenuPrincipal_pressed"]
