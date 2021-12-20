@@ -118,23 +118,29 @@ anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
 margin_left = -529.0
-margin_top = -88.0
-margin_right = -160.0
-margin_bottom = 144.0
+margin_top = -122.0
+margin_right = -177.0
+margin_bottom = 163.0
 custom_constants/separation = 16
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="BotonIniciar" parent="VBoxContainer" instance=ExtResource( 8 )]
-margin_right = 369.0
-margin_bottom = 108.0
+margin_right = 352.0
+margin_bottom = 84.0
 text = "Iniciar Juego"
 
+[node name="BotonComoJugar" parent="VBoxContainer" instance=ExtResource( 8 )]
+margin_top = 100.0
+margin_right = 352.0
+margin_bottom = 184.0
+text = "Como Jugar"
+
 [node name="BotonSalir" parent="VBoxContainer" instance=ExtResource( 7 )]
-margin_top = 124.0
-margin_right = 369.0
-margin_bottom = 232.0
+margin_top = 200.0
+margin_right = 352.0
+margin_bottom = 285.0
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 scroll_base_offset = Vector2( 0, -600 )
@@ -214,3 +220,4 @@ __meta__ = {
 }
 
 [connection signal="pressed" from="VBoxContainer/BotonIniciar" to="." method="_on_BotonIniciar_pressed"]
+[connection signal="pressed" from="VBoxContainer/BotonComoJugar" to="." method="_on_BotonComoJugar_pressed"]
